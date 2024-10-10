@@ -34,14 +34,20 @@ namespace ThucHanhLab4
         {
             try
             {
-                if(txtMaKhoa.Text == "" || txtTenKhoa.Text == "" || txtTong.Text == "")
+                var faculty = new Faculty
                 {
-                    throw new Exception("Vui Lòng Nhập Đầy Đ");
-                }    
-            }
-            catch
-            {
+                    FacultyName = txtTenKhoa.Text,
+                    TotalProfessor = int.TryParse(txtTong.Text, out int professors) ? professors : (int?)null
+                };
 
+                dbContext.Faculties.Add(faculty);
+                dbContext.SaveChanges();
+                LoadData();
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
