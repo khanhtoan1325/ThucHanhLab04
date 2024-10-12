@@ -89,6 +89,11 @@ namespace ThucHanhLab4
 
         }
 
-        
+        private void btnTroLai_Click(object sender, EventArgs e)
+        {
+            frmQuanLy f1 = new frmQuanLy();
+            f1.Show();
+            this.Hide();
+        }
     }
 }

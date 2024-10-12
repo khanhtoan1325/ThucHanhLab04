@@ -86,16 +86,17 @@
             // 
             this.btnTroLai.Location = new System.Drawing.Point(358, 160);
             this.btnTroLai.Name = "btnTroLai";
-            this.btnTroLai.Size = new System.Drawing.Size(75, 23);
+            this.btnTroLai.Size = new System.Drawing.Size(88, 23);
             this.btnTroLai.TabIndex = 3;
             this.btnTroLai.Text = "Trở Lại";
             this.btnTroLai.UseVisualStyleBackColor = true;
+            this.btnTroLai.Click += new System.EventHandler(this.btnTroLai_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(192, 160);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.Size = new System.Drawing.Size(88, 23);
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa ";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -104,7 +105,7 @@
             // 
             this.btnTim.Location = new System.Drawing.Point(34, 160);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 23);
+            this.btnTim.Size = new System.Drawing.Size(88, 23);
             this.btnTim.TabIndex = 3;
             this.btnTim.Text = "Tìm Kiếm ";
             this.btnTim.UseVisualStyleBackColor = true;

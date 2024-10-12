@@ -11,9 +11,9 @@ using ThucHanhLab4.Data;
 
 namespace ThucHanhLab4
 {
-    public partial class Form1 : Form
+    public partial class frmQuanLy : Form
     {
-        public Form1()
+        public frmQuanLy()
         {
             InitializeComponent();
         }
