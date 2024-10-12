@@ -55,7 +55,6 @@ namespace ThucHanhLab4
             }
         }
 
-
         private void loadDaTa()
         {
             using (Model1 model1 = new Model1())

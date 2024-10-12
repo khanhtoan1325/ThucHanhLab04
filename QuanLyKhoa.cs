@@ -14,7 +14,7 @@ namespace ThucHanhLab4
 {
     public partial class QuanLyKhoa : Form
     {
-        private Model1 dbContext;
+        public Model1 dbContext;
         public QuanLyKhoa()
         {
             InitializeComponent();
@@ -22,13 +22,31 @@ namespace ThucHanhLab4
         }
         private void LoadData()
         {
-            dataGridView1.DataSource = dbContext.Faculties.Select(f => new
+            try
             {
-                f.FacultyID,
-                f.FacultyName,
-                f.TotalProfessor
-            }).ToList();
+                var faculties = dbContext.Faculties
+                    .Select(f => new
+                    {
+                        f.FacultyID,
+                        f.FacultyName,
+                       // f.TotalProfessor
+                    }).ToList();
+
+                if (faculties != null && faculties.Any())
+                {
+                    dataGridView1.DataSource = faculties;
+                }
+                else
+                {
+                    MessageBox.Show("No data found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -37,7 +55,7 @@ namespace ThucHanhLab4
                 var faculty = new Faculty
                 {
                     FacultyName = txtTenKhoa.Text,
-                    TotalProfessor = int.TryParse(txtTong.Text, out int professors) ? professors : (int?)null
+                    //TotalProfessor = int.TryParse(txtTong.Text, out int professors) ? professors : (int?)null
                 };
 
                 dbContext.Faculties.Add(faculty);
@@ -112,7 +130,7 @@ namespace ThucHanhLab4
             {
                 txtMaKhoa.Text = selectedFaculty.FacultyID.ToString();
                 txtTenKhoa.Text = selectedFaculty.FacultyName;
-                txtTong.Text = selectedFaculty.TotalProfessor?.ToString() ?? "";
+                txtTong.Text = selectedFaculty.TotalProfessor?.ToString();
             }
         }
     }

@@ -22,8 +22,6 @@ namespace ThucHanhLab4.Data
         [StringLength(50)]
         public string FacultyName { get; set; }
 
-        public int? TotalProfessor { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Student> Students { get; set; }
     }
