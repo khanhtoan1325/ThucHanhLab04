@@ -97,7 +97,7 @@ namespace ThucHanhLab4
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
@@ -259,6 +259,12 @@ namespace ThucHanhLab4
         {
             QuanLyKhoa quanLyKhoa = new QuanLyKhoa();
             quanLyKhoa.Show();
+        }
+
+        private void mnstripTimKiem_Click(object sender, EventArgs e)
+        {
+            frmTimKiem timKiem = new frmTimKiem();
+            timKiem.Show();
         }
     }
 }

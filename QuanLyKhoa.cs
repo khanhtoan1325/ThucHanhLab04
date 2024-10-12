@@ -130,7 +130,7 @@ namespace ThucHanhLab4
             {
                 txtMaKhoa.Text = selectedFaculty.FacultyID.ToString();
                 txtTenKhoa.Text = selectedFaculty.FacultyName;
-                txtTong.Text = selectedFaculty.TotalProfessor?.ToString();
+                txtTong.Text = selectedFaculty.TotalProfessor.ToString();
             }
         }
     }

@@ -51,7 +51,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.chứcNăngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnstripQuanLy = new System.Windows.Forms.ToolStripMenuItem();
-            this.tìmKiếmCtrlFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnstripTimKiem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -257,7 +257,7 @@
             // 
             this.chứcNăngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnstripQuanLy,
-            this.tìmKiếmCtrlFToolStripMenuItem});
+            this.mnstripTimKiem});
             this.chứcNăngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("chứcNăngToolStripMenuItem.Image")));
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
             this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
@@ -271,12 +271,13 @@
             this.mnstripQuanLy.Text = "Quản Lý Khoa   F2";
             this.mnstripQuanLy.Click += new System.EventHandler(this.mnstripQuanLy_Click);
             // 
-            // tìmKiếmCtrlFToolStripMenuItem
+            // mnstripTimKiem
             // 
-            this.tìmKiếmCtrlFToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tìmKiếmCtrlFToolStripMenuItem.Image")));
-            this.tìmKiếmCtrlFToolStripMenuItem.Name = "tìmKiếmCtrlFToolStripMenuItem";
-            this.tìmKiếmCtrlFToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.tìmKiếmCtrlFToolStripMenuItem.Text = "Tìm Kiếm   Ctrl + F";
+            this.mnstripTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("mnstripTimKiem.Image")));
+            this.mnstripTimKiem.Name = "mnstripTimKiem";
+            this.mnstripTimKiem.Size = new System.Drawing.Size(224, 26);
+            this.mnstripTimKiem.Text = "Tìm Kiếm   Ctrl + F";
+            this.mnstripTimKiem.Click += new System.EventHandler(this.mnstripTimKiem_Click);
             // 
             // Form1
             // 
@@ -332,7 +333,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem chứcNăngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnstripQuanLy;
-        private System.Windows.Forms.ToolStripMenuItem tìmKiếmCtrlFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnstripTimKiem;
     }
 }
 

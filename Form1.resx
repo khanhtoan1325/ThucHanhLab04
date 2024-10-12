@@ -136,7 +136,7 @@
   <data name="mnstripQuanLy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cwAAEnMBjCK5BwAAJXVJREFUeF7tXQd8VMX2vpueEBISSOiEKi0hNAEBRVEEu4IIUqRJUXqzPBDQ57Ng
+        cQAAEnEB89x6jgAAJXVJREFUeF7tXQd8VMX2vpueEBISSOiEKi0hNAEBRVEEu4IIUqRJUXqzPBDQ57Ng
         1+df9IkUpSmoKKAgvUgNBBISqrRQEhI6pOzuPf/znbsTlrCBJKQt7Pn9vszuzd07M+d8c+bM3LlztWIi
         bgwPhkm+uSQ7gY5uOz3B+KpC+OzHKOGCwJ8RaEvtjY7P7sZH5xZViTDGJ4wYxnHGCRdED6cYKbZ0F+MH
         xtMMLwbEqUmA1g55nHGBQQzdlrrgGEo/IMN9DIhTkkAZvxkjjYFKZTCsDFQS6Z0MpQOkCvhuZlgYihAD
@@ -299,7 +299,7 @@
         2v8DNgNlXB2+hHUAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="tìmKiếmCtrlFToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="mnstripTimKiem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAf7FJREFUeF7t
         nQeYFFXWhlEazIDQ1TNdnauqyZIzguAKKgYERQERUczZNa1rWnPWNWD2N2KOwJBzjiJhyEjOeYYwwMD9
