@@ -172,6 +172,7 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.pictureBox1);
             this.Name = "QuanLyKhoa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Khoa";
             this.Load += new System.EventHandler(this.QuanLyKhoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

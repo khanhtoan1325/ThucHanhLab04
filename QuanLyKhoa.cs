@@ -125,13 +125,13 @@ namespace ThucHanhLab4
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedFaculty = dataGridView1.CurrentRow.DataBoundItem as dynamic;
-            if (selectedFaculty != null)
+            if (e.RowIndex >= 0)
             {
-                txtMaKhoa.Text = selectedFaculty.FacultyID.ToString();
-                txtTenKhoa.Text = selectedFaculty.FacultyName;
-                txtTong.Text = selectedFaculty.TotalProfessor.ToString();
-            }
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                txtMaKhoa.Text = row.Cells[0].Value.ToString();
+                txtTenKhoa.Text = row.Cells[1].Value.ToString();
+                txtTong.Text = row.Cells[2].Value.ToString();
+            }    
         }
     }
 }

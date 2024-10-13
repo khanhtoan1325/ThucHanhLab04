@@ -95,5 +95,81 @@ namespace ThucHanhLab4
             f1.Show();
             this.Hide();
         }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            timTheoKhoa();
+        }
+
+        private void timTheoKhoa()
+        {
+            using (var dbContext = new Model1())
+            {
+                
+                string selectedKhoa = cmbKhoa.Text;
+
+                if(!string.IsNullOrEmpty(selectedKhoa))
+                {
+                    var results = dbContext.Students.Where(s => s.Faculty.FacultyName == selectedKhoa).ToList();
+
+                    if (results.Count == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy khoa đã chọn", "Thông báo", MessageBoxButtons.OK);
+                        dataGridView1.DataSource = null;
+                    }   
+                    else
+                    {
+                        BindGrid(results);
+                    }    
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn khoa để tìm kiếm", "Thông báo");
+                }    
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            xoaTimKiem();
+        }
+
+        private void xoaTimKiem()
+        {
+            if(dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                string studentID = selectedRow.Cells[0].Value.ToString();
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn xóa tìm kiếm này", "Thông Báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    using (var dbcontext = new Model1())
+                    {
+                        var studentDeLeTe = dbcontext.Students.FirstOrDefault(s => s.StudentID == studentID);
+                        if (studentDeLeTe != null) 
+                        {
+                            dbcontext.Students.Remove(studentDeLeTe);
+
+                            dbcontext.SaveChanges();
+
+                            List<Student> listStudent = dbcontext.Students.ToList();
+
+                            BindGrid(listStudent);
+
+                            MessageBox.Show("Xóa tiềm kiếm xong", "Thông Báo", MessageBoxButtons.OK);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không Timg Thấy Lựa Chọn Để Xóa", "Thông Báo",MessageBoxButtons.OK);
+                        }    
+                    }    
+                }
+            } 
+            else
+            {
+                MessageBox.Show("Vui Lòng Lựa Chọn Để Xóa","Thông Báo",MessageBoxButtons.OK);
+            }    
+        }
     }
 }

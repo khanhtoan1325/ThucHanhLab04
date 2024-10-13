@@ -228,6 +228,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -249,7 +251,7 @@
             this.chứcNăngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1112, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1112, 28);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -260,14 +262,14 @@
             this.mnstripTimKiem});
             this.chứcNăngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("chứcNăngToolStripMenuItem.Image")));
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
-            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
+            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.chứcNăngToolStripMenuItem.Text = "Chức Năng";
             // 
             // mnstripQuanLy
             // 
             this.mnstripQuanLy.Image = ((System.Drawing.Image)(resources.GetObject("mnstripQuanLy.Image")));
             this.mnstripQuanLy.Name = "mnstripQuanLy";
-            this.mnstripQuanLy.Size = new System.Drawing.Size(224, 26);
+            this.mnstripQuanLy.Size = new System.Drawing.Size(215, 26);
             this.mnstripQuanLy.Text = "Quản Lý Khoa   F2";
             this.mnstripQuanLy.Click += new System.EventHandler(this.mnstripQuanLy_Click);
             // 
@@ -275,7 +277,7 @@
             // 
             this.mnstripTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("mnstripTimKiem.Image")));
             this.mnstripTimKiem.Name = "mnstripTimKiem";
-            this.mnstripTimKiem.Size = new System.Drawing.Size(224, 26);
+            this.mnstripTimKiem.Size = new System.Drawing.Size(215, 26);
             this.mnstripTimKiem.Text = "Tìm Kiếm   Ctrl + F";
             this.mnstripTimKiem.Click += new System.EventHandler(this.mnstripTimKiem_Click);
             // 
