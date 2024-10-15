@@ -8,7 +8,7 @@ namespace ThucHanhLab4.Data
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model1")
+            : base("name=Model12")
         {
         }
 

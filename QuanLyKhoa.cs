@@ -29,7 +29,7 @@ namespace ThucHanhLab4
                     {
                         f.FacultyID,
                         f.FacultyName,
-                       // f.TotalProfessor
+                        f.TotalProfessor
                     }).ToList();
 
                 if (faculties != null && faculties.Any())
@@ -55,7 +55,7 @@ namespace ThucHanhLab4
                 var faculty = new Faculty
                 {
                     FacultyName = txtTenKhoa.Text,
-                    //TotalProfessor = int.TryParse(txtTong.Text, out int professors) ? professors : (int?)null
+                    TotalProfessor = int.TryParse(txtTong.Text, out int professors) ? professors : (int?)null
                 };
 
                 dbContext.Faculties.Add(faculty);
