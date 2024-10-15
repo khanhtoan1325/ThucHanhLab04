@@ -168,7 +168,7 @@ namespace ThucHanhLab4
                 string studentID = selectedRow.Cells[0].Value.ToString();
 
                 
-                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn Sửa sinh viên này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn Sửa sinh viên này?", "Xác nhận sửa", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     
@@ -177,13 +177,14 @@ namespace ThucHanhLab4
                         var student = model1.Students.FirstOrDefault(s => s.StudentID == studentID);
                         if (student != null)
                         {
-                            model1.Students.Remove(student);
+                            model1.Students.Add(student);
                             model1.SaveChanges(); 
 
                             MessageBox.Show("Sửa sinh viên thành công!", "Thông Báo", MessageBoxButtons.OK);
 
                             
-                            dataGridView1.Rows.Remove(selectedRow);
+                            dataGridView1.Rows.Add();
+                            model1.SaveChanges();
                         }
                         else
                         {
