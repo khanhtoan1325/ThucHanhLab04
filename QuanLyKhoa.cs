@@ -52,20 +52,45 @@ namespace ThucHanhLab4
         {
             try
             {
+                
+                if (string.IsNullOrWhiteSpace(txtTenKhoa.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập tên khoa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                
+                int totalProfessor = 0;
+                if (!string.IsNullOrWhiteSpace(txtTong.Text))
+                {
+                    if (!int.TryParse(txtTong.Text, out totalProfessor))
+                    {
+                        MessageBox.Show("Tổng số giáo sư phải là số nguyên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                
                 var faculty = new Faculty
                 {
                     FacultyName = txtTenKhoa.Text,
-                    TotalProfessor = int.TryParse(txtTong.Text, out int professors) ? professors : (int?)null
+                    FacultyID = txtMaKhoa.Text,
+                    TotalProfessor = totalProfessor
                 };
 
+                
                 dbContext.Faculties.Add(faculty);
                 dbContext.SaveChanges();
+
+                
                 LoadData();
                 ClearFields();
+
+                MessageBox.Show("Thêm khoa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

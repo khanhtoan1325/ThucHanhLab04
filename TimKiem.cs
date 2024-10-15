@@ -105,28 +105,48 @@ namespace ThucHanhLab4
         {
             using (var dbContext = new Model1())
             {
-                
                 string selectedKhoa = cmbKhoa.Text;
+                string searchTen = txtTen.Text; // ô nhập tên sinh viên
+                string searchID = txtMa.Text;   // ô nhập mã sinh viên
 
-                if(!string.IsNullOrEmpty(selectedKhoa))
+                var results = dbContext.Students.AsQueryable();
+
+                if (!string.IsNullOrEmpty(selectedKhoa))
                 {
-                    var results = dbContext.Students.Where(s => s.Faculty.FacultyName == selectedKhoa).ToList();
+                    results = results.Where(s => s.Faculty.FacultyName == selectedKhoa);
+                }
 
-                    if (results.Count == 0)
+                if (!string.IsNullOrEmpty(searchTen))
+                {
+                    results = results.Where(s => s.StudentName.Contains(searchTen));
+                }
+
+                if (!string.IsNullOrEmpty(searchID))
+                {
+                    if (int.TryParse(searchID, out int studentID))
                     {
-                        MessageBox.Show("Không tìm thấy khoa đã chọn", "Thông báo", MessageBoxButtons.OK);
-                        dataGridView1.DataSource = null;
-                    }   
+                        results = results.Where( s => s.StudentID == searchID);
+                    }
                     else
                     {
-                        BindGrid(results);
-                    }    
+                        MessageBox.Show("ID sinh viên phải là số nguyên hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                var studentResults = results.ToList();
+                if (studentResults.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy sinh viên với tiêu chí đã chọn", "Thông báo", MessageBoxButtons.OK);
+                    dataGridView1.DataSource = null;
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn khoa để tìm kiếm", "Thông báo");
-                }    
+                    BindGrid(studentResults);
+                }
             }
+
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
